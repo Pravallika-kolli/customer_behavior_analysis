@@ -47,6 +47,15 @@ df[['discount_applied','promo_code_used']].head(10)
 df = df.drop('promo_code_used', axis=1)
 df.columns
 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("customer_shopping_behavior.csv")
+
+df.groupby('month')['sales'].sum().plot()
+plt.title("Monthly Sales Trend")
+plt.show()
+
 #installing the required libraries
 pip install psycopg2.binary sqlalchemy
 
