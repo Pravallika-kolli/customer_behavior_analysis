@@ -87,3 +87,11 @@ SUM(purchase_amount) as total_revenue
 from customer
 group by age_group
 order by total_revenue desc;
+
+SELECT 
+    customer_name,
+    SUM(sales) AS total_sales
+FROM orders
+GROUP BY customer_name
+ORDER BY total_sales DESC
+LIMIT 10;
